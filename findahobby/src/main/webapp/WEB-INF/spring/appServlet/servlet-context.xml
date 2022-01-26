@@ -25,5 +25,9 @@
 	<!-- add component-scan 2021.01.25 pjh -->
 	<context:component-scan base-package="com.acornacademy.outerhobby" />
 	
-	
+	<!-- add component-scan 2022.01.26 san -->
+	<context:component-scan base-package="com.acornacademy.DividedTwo" />
+	<context:component-scan base-package="com.acornacademy.HobbySurvey" />
+	<context:component-scan base-package="com.acornacademy.Login" />
+	<context:component-scan base-package="com.acornacademy.Membership" />
 </beans:beans>

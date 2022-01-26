@@ -18,8 +18,15 @@ public class HomeController {
 	
 	@RequestMapping(value = "/")
 	public String home(Locale locale, Model model) {
-		logger.info("Access homepage...");
+		logger.info("Access homepage.....");
 		return "home";
 	}
+	
+	@RequestMapping(value = "member/Login")
+	public String Login(Locale locale, Model model) {
+		logger.info("Access Login");
+		return "member/Login";
+	}
+	
 	
 }
