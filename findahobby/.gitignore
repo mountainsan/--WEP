@@ -5,7 +5,7 @@
 # Custom
 /Users
 pom.properties
-MANIFEST.MF
+/target
 
 ### Eclipse ###
 .metadata
