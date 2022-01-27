@@ -18,7 +18,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/")
 	public String home(Locale locale, Model model) {
-		logger.info("Access homepage...");
+
 		return "home";
 	}
 	

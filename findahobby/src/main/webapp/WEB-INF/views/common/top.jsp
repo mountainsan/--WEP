@@ -39,6 +39,8 @@
 				</li>
 				<li class="nav-item"><a class="nav-link" href="${urlHome }outerhobby">실외 취미 보기</a>
 				</li>
+				<li class="nav-item"><a class="nav-link" href="#">공지사항</a>
+				</li>
 			</ul>
 		</div>
 		<div style="position: relative;right: 70px;top: 7px">
