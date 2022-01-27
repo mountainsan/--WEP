@@ -13,6 +13,12 @@ public class LoginServiceImpl implements ILoginService {
 	
 	private static final Logger logger = LoggerFactory.getLogger(LoginServiceImpl.class);
 
+	@Override
+	public int loginProc(Login login) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	
 	
 

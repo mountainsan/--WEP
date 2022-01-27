@@ -22,9 +22,9 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value = "member/Login")
+	@RequestMapping(value = "login")
 	public String Login(Locale locale, Model model) {
-		logger.info("Access Login");
+		logger.info("Access login");
 		return "member/Login";
 	}
 	
