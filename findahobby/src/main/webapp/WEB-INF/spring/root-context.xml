@@ -8,7 +8,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<!-- <bean class="org.apache.commons.dbcp2.BasicDataSource"
+	<bean class="org.apache.commons.dbcp2.BasicDataSource"
 	id="dataSource" p:driverClassName="oracle.jdbc.OracleDriver"
 	p:url="jdbc:oracle:thin:@database-1.cbrtfqqbokts.us-east-1.rds.amazonaws.com:1521:orcl"
 	p:username="dean" p:password="qkrwngud25!" />
@@ -16,8 +16,9 @@
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean"
 		id="sqlSessionFactoryBean" p:dataSource-ref="dataSource"
 		p:mapperLocations="/WEB-INF/spring/mapper/*.xml" />
- -->
-	<!-- <bean class="org.mybatis.spring.mapper.MapperFactoryBean"
-		id="#" p:mapperInterface="#"
-		p:sqlSessionFactory-ref="sqlSessionFactoryBean" /> -->
+		
+	<!-- Noticeboard mapperFactoryBean 20220130 pjh -->	
+	<bean class="org.mybatis.spring.mapper.MapperFactoryBean"
+		id="NoticeboardmapperFactoryBean" p:mapperInterface="com.acornacademy.noticeBoard.INoticeboardDAO"
+		p:sqlSessionFactory-ref="sqlSessionFactoryBean" />
 </beans>
