@@ -1,6 +1,9 @@
 package com.acornacademy.noticeBoard;
 
 import java.sql.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -32,6 +35,20 @@ public class NoticeboardImpl implements INoticeboard{
 		// Save current date
 		Date writeDate= new Date(System.currentTimeMillis());
 		noticeboard.setBwritedate(writeDate);
+	}
+
+	@Override
+	public List<Noticeboard> readBoard() {
+		return iNoticeboardDAO.readBoard();
+	}
+
+	@Override
+	public Noticeboard readDetail(String bno) {
+		Map<String, Integer> hitsMap= new HashMap<String, Integer>();
+		int noticebno= Integer.parseInt(bno);
+		hitsMap.put("bno", noticebno);
+		iNoticeboardDAO.Hits(hitsMap);
+		return iNoticeboardDAO.readDetail(bno);
 	}
 
 }

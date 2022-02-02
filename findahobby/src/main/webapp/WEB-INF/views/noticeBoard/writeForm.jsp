@@ -7,6 +7,7 @@
 <section class="pt-5 pb-5">
 <form action="${urlHome }noticeboard/writeProc" method="post">
 <%-- <input type="text" name="pno" value="${pno }"> --%>
+<div style="padding-top:100px; padding-bottom:100px;">
 <table style="width: 650px; ">
 	<tr>
 		<td style="width: 80px; height:40px;" align="right">작성자</td>
@@ -30,6 +31,7 @@
 		</td>
 	</tr>
 </table>
+</div>
 </form>
 </section>
 </center>

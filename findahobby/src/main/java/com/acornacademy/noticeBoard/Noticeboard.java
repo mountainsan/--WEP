@@ -4,6 +4,9 @@ import java.sql.Date;
 
 //게시판 
 public class Noticeboard {
+	
+ // 조회수 
+ private Integer hits;
 
  // 글번호 
  private Integer bno;
@@ -19,8 +22,18 @@ public class Noticeboard {
 
  // 게시판작성일 
  private Date bwritedate;
+ 
+ 
 
- public Integer getBno() {
+public Integer getHits() {
+	 return hits;
+}
+
+public void setHits(Integer hits) {
+	 this.hits = hits;
+}
+
+public Integer getBno() {
      return bno;
  }
 

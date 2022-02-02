@@ -1,17 +1,17 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:url var="urlHome" value="/" />
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	$("div.title").css("cursor", "pointer").click(function(){
 		let no= $(this).attr("id");
-		$("#writeNo").val(no);
-		$("#frm").attr("action", "${urlHome}board/detailRead");
+		$("#bno").val(no);
+		$("#frm").attr("action", "${urlHome}noticeboard/readBoard");
 		$("#frm").submit();
 	})
 })
-</script> -->
+</script>
 <div class="top"><%@ include file="../common/top.jsp" %></div>
 
 <center>
@@ -22,7 +22,8 @@ $(document).ready(function(){
 <form id="frm" action="${urlHome }noticeboard/write" method="post">
 <!-- get session id 20220130 pjh -->
 Session ID: <input type=text value='<%=session.getAttribute("hid") %>' readonly="readonly" />
-<!-- <input type="hidden" id="writeNo" name="writeNo" /> -->
+<input type="hidden" id="bno" name="bno" />
+<div style="padding-top:100px; padding-bottom:100px;">
 <table style="width: 650px; ">
 	<thead>
 	<tr>
@@ -50,7 +51,7 @@ Session ID: <input type=text value='<%=session.getAttribute("hid") %>' readonly=
 	</tr>
 	
 	<!-- var: "b", items="${boardLst}"  -->
-	<c:forEach begin="0" end="2">
+	<c:forEach var="Nboard" items="${boardLst }">
 	
 	<tr>
 	<c:set var="admin" value='<%=session.getAttribute("hid") %>' />
@@ -59,11 +60,11 @@ Session ID: <input type=text value='<%=session.getAttribute("hid") %>' readonly=
 		</c:if>
 		<!-- pre : 넘어오는 값 그대로 출력 -->
 		<!--  id="${board.no}", <pre>${board.title }</pre>  -->
-		<td style="width: 40px; height:40px;" align="left"><div class="bnum">번호</div></td>
-		<td style="width: 330px; height:40px;" align="left"><div class="title">게시판 제목</div></td>
-		<td style="width: 80px; height:40px;" align="center">사용자 아이디</td>
-		<td style="width: 120px; height:40px;" align="left">작성일</td>
-		<td style="width: 80px; height:40px;" align="left">조회수</td>
+		<td style="width: 40px; height:40px;" align="left"><div class="bnum">${Nboard.bno }</div></td>
+		<td style="width: 330px; height:40px;" align="left"><div class="title" id="${Nboard.bno }">${Nboard.btitle }</div></td>
+		<td style="width: 80px; height:40px;" align="center">${Nboard.hid }</td>
+		<td style="width: 120px; height:40px;" align="left">${Nboard.bwritedate }</td>
+		<td style="width: 80px; height:40px;" align="left">${Nboard.hits }</td>
 	</tr>
 	
 	</c:forEach>
@@ -71,7 +72,7 @@ Session ID: <input type=text value='<%=session.getAttribute("hid") %>' readonly=
 	
 	<c:set var="admin" value='<%=session.getAttribute("hid") %>' />
 		<c:if test="${admin eq 'admin' }">
-	<tr><td colspan=5><hr/></td></tr>
+	<tr><td colspan=7><hr/></td></tr>
 	<tr>
 		
 		<td colspan=2><input type="checkbox"/> 전체선택</td>
@@ -82,9 +83,10 @@ Session ID: <input type=text value='<%=session.getAttribute("hid") %>' readonly=
 			<button style="width: 100px;">글쓰기</button>
 		</td>
 	</tr>
-	<tr><td colspan=5><hr/></td></tr>
+	<tr><td colspan=7><hr/></td></tr>
 		</c:if>
 </table>
+</div>
 </form>
 </section>
 
@@ -102,7 +104,6 @@ Session ID: <input type=text value='<%=session.getAttribute("hid") %>' readonly=
 </td>
 </tr>
 </table>
-
 </center>
 
 <div class="footer"><%@ include file="../common/footer.jspf" %></div>
