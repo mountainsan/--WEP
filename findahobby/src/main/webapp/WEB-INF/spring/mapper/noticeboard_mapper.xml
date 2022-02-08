@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.acornacademy.noticeBoard.INoticeboardDAO">
+<insert id="InsertWriteProc" parameterType="com.acornacademy.noticeBoard.Noticeboard">
+	<selectKey keyProperty="bno" resultType="int" order="BEFORE">
+		SELECT nvl(max(bno), 0)+1 FROM NOTICEBOARD
+	</selectKey>
+	INSERT INTO noticeboard(bno, hid, btitle, bcontent, bwritedate)
+	VALUES (#{bno}, 'admin', #{btitle}, #{bcontent}, #{bwritedate})
+</insert>
+
+<select id="readBoard" resultType="com.acornacademy.noticeBoard.Noticeboard">
+	SELECT n.bno, n.hid, n.btitle, n.bcontent, n.bwritedate, h.hits
+	FROM NOTICEBOARD n
+	LEFT JOIN NOTICEBOARDHITS h
+	ON n.BNO = h.BNO 
+</select>
+
+<select id="readDetail" resultType="com.acornacademy.noticeBoard.Noticeboard">
+	SELECT * FROM NOTICEBOARD WHERE BNO=#{bno}
+</select>
+
+<insert id="Hits" parameterType="map">
+	<selectKey keyProperty="hits" resultType="int" order="BEFORE">
+		SELECT nvl(max(hits), 0)+1 FROM noticeboardhits
+		WHERE bno=#{bno}
+	</selectKey>
+	<choose>
+		<when test="hits==1">
+			INSERT INTO noticeboardhits(bno, hits)
+			VALUES(#{bno}, #{hits})
+		</when>
+		<otherwise>
+			UPDATE noticeboardhits
+			SET hits=#{hits}
+			WHERE bno=#{bno}
+		</otherwise>
+	</choose>
+</insert>
+
+</mapper>
