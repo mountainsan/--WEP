@@ -28,9 +28,80 @@ msg
 
 <form action="${urlHome }membership/memberProc" method="post">
 <table>
+<tr><td colspan="4" align="center"><hr/>설문지영역<hr/></td></tr>
 
+<tr>
+		<td align='right' width=120>장소</td>
+		<td colspan="2">
+			<input type=radio name='place' value='indoor' checked="checked"/>실내
+			<input type=radio name='place' value='outdoor' />실외
+			
+		</td>
+	</tr>
+	
+<tr>
+		<td align='right' width=120>성향</td>
+		<td colspan="2">
+			<input type=radio name='active' value='active' checked="checked"/>활동적
+			<input type=radio name='active' value='nonactive' />비활동적
+			
+		</td>
+	</tr>
+	
+	<tr>
+		<td align='right' width=120>관심사</td>
+		<td colspan="6">
+			<input type=radio name='interest' value='workout' checked="checked"/>운동
+			<input type=radio name='interest' value='make' />창작
+			<input type=radio name='interest' value='deco' />꾸미기
+			<input type=radio name='interest' value='collect' />수집
+			<input type=radio name='interest' value='entertain' />오락
+			<input type=radio name='interest' value='food' />푸드
+		</td>
+	</tr>
+	
+	<tr>
+		<td align='right' width=120>활동시간</td>
+		<td colspan="4">
+			<input type=radio name='time' value='onehour' checked="checked"/>1~2시간
+			<input type=radio name='time' value='threehour' />3~4시간
+			<input type=radio name='time' value='threehour' />5~6시간
+			<input type=radio name='time' value='threehour' />6시간이상
+		</td>
+	</tr>
+	
+	<tr>
+		<td align='right' width=120>취미 난이도</td>
+		<td colspan="2">
+			<input type=radio name='difficulty' value='high' checked="checked"/>상
+			<input type=radio name='difficulty' value='middle' />중
+			<input type=radio name='difficulty' value='low' />하
+		</td>
+	</tr>
+	
 
 	<tr><td colspan="4" align="center"><hr/>필수사항<hr/></td></tr>
+	
+	<tr>
+		<td align='right' height=40>이름</td>
+		<td>
+			<input type=text name='name' placeholder='이름을 입력해주세요'"/> 
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<td align='right' height=40>휴대폰 번호</td>
+		<td>
+			<input type=text name='phone' placeholder='010-0000-0000'"/> 
+		</td>
+		
+	</tr>
+	
+
+	
+	
+	
 	<tr>
 		<td align='right' height=40>아이디</td>
 		<td>
@@ -95,6 +166,7 @@ msg
 	<tr>
 		<td align='center' height=40 colspan=4>
 			<input type=submit class="btn btn-outline-success" value='회원가입' style="width: 120px; "/>
+			<input type=submit class="btn btn-outline-success" value='이미 아이디가 있으신가요?' style="width: 120px; "/>
 			<input type=reset class="btn btn-outline-success" value='취소' style="width: 120px; "/>	 
 		</td>
 	</tr>
