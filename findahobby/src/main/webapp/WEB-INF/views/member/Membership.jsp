@@ -17,13 +17,18 @@ function popupWindow(){
 }
 
 </script>
-<center>
-<h3><font color="red">${msg }</font></h3>
-<form action="${urlHome }membership/memberProc" method="post">
-<table>
 <tr>
 	<td style="height: 100%;"><%@ include file="../common/top.jsp"%></td>
 			</tr>
+<center>
+
+<h3>
+msg
+<font color="red">${msg }</font></h3>
+
+<form action="${urlHome }membership/memberProc" method="post">
+<table>
+
 
 	<tr><td colspan="4" align="center"><hr/>필수사항<hr/></td></tr>
 	<tr>
@@ -31,7 +36,7 @@ function popupWindow(){
 		<td>
 			<input type=text name='id' placeholder='id 입력' value="${member.id }"/> 
 		</td>
-		<td colspan="2"><button formaction="${urlHome }membership/isExistID">중복 확인</button></td>
+		<td colspan="2"><button class="btn btn-outline-success" formaction="${urlHome }membership/isExistID">중복 확인</button></td>
 	</tr>
 	<tr>
 		<td align='right' height=40>패스워드</td>
@@ -48,14 +53,14 @@ function popupWindow(){
 		<td>
 			<input type=text name='email' placeholder='E-Mail 입력' value="${member.email }"/> 
 		</td>
-		<td colspan="2"><button formaction="${urlHome }membership/sendAuth">인증번호 전송</button></td>
+		<td colspan="2"><button class="btn btn-outline-success" formaction="${urlHome }membership/sendAuth">인증번호 전송</button></td>
 	</tr>
 	<tr>
 		<td align='right'>인증번호</td>
 		<td>
 			<input type=text name='authNum' placeholder='인증번호 입력'/> 
 		</td>
-		<td colspan="2"><button formaction="${urlHome }membership/authConfirm">인증번호 확인</button></td>
+		<td colspan="2"><button class="btn btn-outline-success" formaction="${urlHome }membership/authConfirm">인증번호 확인</button></td>
 	</tr>
 	<tr><td colspan="4" align="center"><hr/>선택사항<hr/></td></tr>
 	<tr>
@@ -64,7 +69,7 @@ function popupWindow(){
 			<input type=text id='zipcode' name='zipcode' readonly="readonly"/> 
 		</td>
 		<td colspan="2">
-		<input type="button" onclick="popupWindow()" value="우편번호 검색"/></td>
+		<input type="button" class="btn btn-outline-success" onclick="popupWindow()" value="우편번호 검색"/></td>
 	</tr>
 	<tr>
 		<td align='right'>주소</td>
@@ -89,13 +94,17 @@ function popupWindow(){
 	
 	<tr>
 		<td align='center' height=40 colspan=4>
-			<input type=submit value='회원가입' style="width: 120px; "/>
-			<input type=reset value='취소' style="width: 120px; "/>	 
+			<input type=submit class="btn btn-outline-success" value='회원가입' style="width: 120px; "/>
+			<input type=reset class="btn btn-outline-success" value='취소' style="width: 120px; "/>	 
 		</td>
 	</tr>
-	<tr>
+	
+</table>
+
+</form>
+<tr>
 	<td style="height:100%;"><%@ include file="../common/footer.jspf" %></td>
 </tr>
-</table>
-</form>
 </center>
+
+

@@ -22,8 +22,9 @@
 				<td><input type=password name='pw' placeholder='PW 입력' /></td>
 			</tr>
 			<tr>
-				<td colspan=2 align='center'><input type=submit value='로그인'
-					style="width: 86px;" /> <input type=reset value='취소'
+				<td colspan=2 align='center'>
+				<input type=submit class="btn btn-outline-success" value='로그인'
+					style="width: 86px;" /> <input type=reset class="btn btn-outline-success" value='취소'
 					style="width: 86px;" /></td>
 			</tr>
 			

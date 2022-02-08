@@ -52,9 +52,9 @@
 		</div>
 		<div class="navbar" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link" href="#">로그인</a>
+				<li class="nav-item"><a class="nav-link" href="${urlHome }login">로그인</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" href="#">회원가입</a>
+				<li class="nav-item"><a class="nav-link" href="${urlHome }membership">회원가입</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" href="#">글쓰기</a>
 				</li>

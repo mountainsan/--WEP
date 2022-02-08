@@ -12,6 +12,7 @@ public class MembershipController {
 	
 	@RequestMapping(value = "membershipProc")
 	public String membership() {
+		
 		return "member/membership";
 	}
 
