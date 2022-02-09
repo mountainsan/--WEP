@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="IMemberDAO">
+
+<insert id="InsertpwProc" parameterType="com.acornacademy.Login.hlogin">
+insert into login(Hid, Hpw)
+values (#{hid}, #{hpw})
+</insert>
+
+<insert id="InsertPostcode" parameterType="com.acornacademy.Membership.Postcode">
+	<selectKey keyProperty="no" resultType="int" order="BEFORE">
+		SELECT nvl(max(no), 0)+1 FROM postcode
+	</selectKey>
+	INSERT INTO Postcode (no, zipcode, addr1, addr2, hid)
+	VALUES (#{no},#{zipcode},#{addr1},#{addr2},#{hid})
+</insert>
+
+<insert id="InsertMember" parameterType="com.acornacademy.Membership.hregister">
+INSERT INTO hregister 
+(hid, hpw, hname, hphone, hemail, hregdate, hlocation, htendency, hinterest, hactivitytime, hdifficulty )
+
+VALUES (#{hid}, #{hpw}, #{hphone} , #{hemail}, #{hregdate}, #{hlocation}, #{htendency}, #{hinterest}, #{hactivitytime}, #{hdifficulty} )    
+</insert>
+
+<select id="IsExistID" parameterType="String" resultType="int">
+SELECT COUNT(*)
+FROM login
+WHERE Hid=#{hid}
+</select>
+
+<select id="searchZipcode" parameterType="java.lang.String" 
+resultType="com.acornacademy.Membership.Zipcode">
+	SELECT * FROM zipcode
+	WHERE DONG1 like '%'||#{dong}||'%'
+	OR DONG2 like '%'||#{dong}||'%'
+	OR DORO like '%'||#{dong}||'%'
+</select>
+
+
+</mapper>
