@@ -106,14 +106,14 @@ msg
 	<tr>
 		<td align='right' height=40>아이디</td>
 		<td>
-			<input type=text name='id' placeholder='id 입력' value="${hregister.hid }"/> 
+			<input type=text name='hid' placeholder='id 입력' value="${hregister.hid }"/> 
 		</td>
 		<td colspan="2"><button class="btn btn-outline-success" formaction="${urlHome }membership/isExistID">중복 확인</button></td>
 	</tr>
 	<tr>
 		<td align='right' height=40>패스워드</td>
 		<td>
-			<input type=text name='pw' placeholder='pw 입력' value="${hregister.hpw }"/> 
+			<input type=text name='hpw' placeholder='pw 입력' value="${hregister.hpw }"/> 
 		</td>
 		<td align='right'>패스워드 확인</td>
 		<td>
@@ -123,14 +123,14 @@ msg
 	<tr>
 		<td align='right' height=40>E-Mail</td>
 		<td>
-			<input type=text name='email' placeholder='E-Mail 입력' value="${hregister.hemail }"/> 
+			<input type=text name='hemail' placeholder='E-Mail 입력' value="${hregister.hemail }"/> 
 		</td>
 		<td colspan="2"><button class="btn btn-outline-success" formaction="${urlHome }membership/sendAuth">인증번호 전송</button></td>
 	</tr>
 	<tr>
 		<td align='right'>인증번호</td>
 		<td>
-			<input type=text name='authNum' placeholder='인증번호 입력'/> 
+			<input type=text name='userInputAuthNum' placeholder='인증번호 입력'/> 
 		</td>
 		<td colspan="2"><button class="btn btn-outline-success" formaction="${urlHome }membership/authConfirm">인증번호 확인</button></td>
 	</tr>

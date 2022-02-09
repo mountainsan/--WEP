@@ -21,4 +21,14 @@
 	<bean class="org.mybatis.spring.mapper.MapperFactoryBean"
 		id="NoticeboardmapperFactoryBean" p:mapperInterface="com.acornacademy.noticeBoard.INoticeboardDAO"
 		p:sqlSessionFactory-ref="sqlSessionFactoryBean" />
-</beans>
+
+
+	<bean class="org.mybatis.spring.mapper.MapperFactoryBean"
+			id="MembershipmapperFactoryBean" p:mapperInterface="com.acornacademy.Membership.IMemberDAO"
+			p:sqlSessionFactory-ref="sqlSessionFactoryBean" />
+			
+	<bean class="org.mybatis.spring.mapper.MapperFactoryBean"
+			id="LoginmapperFactoryBean" p:mapperInterface="com.acornacademy.Login.ILoginDAO"
+			p:sqlSessionFactory-ref="sqlSessionFactoryBean" />		
+			
+	</beans>

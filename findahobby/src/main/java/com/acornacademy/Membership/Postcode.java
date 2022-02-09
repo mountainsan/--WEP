@@ -2,23 +2,23 @@ package com.acornacademy.Membership;
 
 
 
-//ÁÖ¼Ò Á¤º¸ 
+//ï¿½Ö¼ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 public class Postcode {
 
-	// ¼ø¹ø
+	// ï¿½ï¿½ï¿½ï¿½
 	private Integer no;
 
-	// ¿ìÆí¹øÈ£
+	// ï¿½ï¿½ï¿½ï¿½ï¿½È£
 	private String zipcode;
 
-	// ÁÖ¼Ò
+	// ï¿½Ö¼ï¿½
 	private String addr1;
 
-	// »ó¼¼ÁÖ¼Ò
+	// ï¿½ï¿½ï¿½Ö¼ï¿½
 	private String addr2;
 
-	// ¾ÆÀÌµð
-	private String id;
+	// ï¿½ï¿½ï¿½Ìµï¿½
+	private String hid;
 
 	public Integer getNo() {
 		return no;
@@ -52,15 +52,15 @@ public class Postcode {
 		this.addr2 = addr2;
 	}
 
-	public String getId() {
-		return id;
+	public String getHId() {
+		return hid;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setHId(String hid) {
+		this.hid = hid;
 	}
 
-	// Postcode ¸ðµ¨ º¹»ç
+	// Postcode ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public void CopyData(Postcode param) {
 		this.no = param.getNo();
 		this.zipcode = param.getZipcode();

@@ -2,10 +2,10 @@ package com.acornacademy.Login;
 
 public class hlogin {
 
-    // 아이디 
+
     private String hid;
 
-    // 비밀번호 
+
     private String hpw;
 
     public String getHid() {
@@ -24,7 +24,7 @@ public class hlogin {
         this.hpw = hpw;
     }
 
-    // Hlogin 모델 복사
+    // Hlogin
 //    public void CopyData(Hlogin param)
 //    {
 //        this.hid = param.getHid();
