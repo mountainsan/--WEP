@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="IMemberDAO">
+<mapper namespace="com.acornacademy.Membership.IMemberDAO">
 
 <insert id="InsertpwProc" parameterType="com.acornacademy.Login.hlogin">
 insert into login(Hid, Hpw)
@@ -24,7 +24,7 @@ VALUES (#{hid}, #{hpw}, #{hphone} , #{hemail}, #{hregdate}, #{hlocation}, #{hten
 
 <select id="IsExistID" parameterType="String" resultType="int">
 SELECT COUNT(*)
-FROM login
+FROM hlogin
 WHERE Hid=#{hid}
 </select>
 
@@ -35,6 +35,5 @@ resultType="com.acornacademy.Membership.Zipcode">
 	OR DONG2 like '%'||#{dong}||'%'
 	OR DORO like '%'||#{dong}||'%'
 </select>
-
 
 </mapper>

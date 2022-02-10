@@ -5,6 +5,8 @@ import java.util.Random;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,9 @@ import java.security.MessageDigest;
 
 @Service
 public class MemberServiceImpl implements IMemberService {
+	
+	private static final Logger logger =
+			LoggerFactory.getLogger(MemberServiceImpl.class);
 
 	@Autowired
 	private IMemberDAO iMemberDao;
@@ -84,9 +89,12 @@ public class MemberServiceImpl implements IMemberService {
 		//사용자 입력 내용 - DB와 비교 - 개수 가져옴
 		int exist = iMemberDao.IsExistID(hregister.getHid());
 		
+		logger.warn("exist : "+exist);
+		
 		if(exist ==0) {
 			return " 사용할 수 있는 아이디 입니다. ";
 		} else 
+			
 		return "이미 존재하는 아이디입니다. ";	
 	}
 
@@ -94,17 +102,29 @@ public class MemberServiceImpl implements IMemberService {
 	public String sendAuth(hregister hregister) {
 		//making authNum, authState into session
 		String authNum = (String)session.getAttribute("authNum");
+		logger.warn("authNum");
 		Boolean authState = (Boolean) session.getAttribute("authState");
+		logger.warn("authState");
+		
 		// making authNum into Random authNum
-		if(authNum == null && !authState) {
+		if(authNum== null && authState== null) {
+			
+			logger.warn("if(authNum== null && !authState)");
 			Random rand = new Random();
 			String randNum = String.format("%04d", rand.nextInt(10000));
 			
 			session.setAttribute("authNum", randNum);
 			session.setMaxInactiveInterval(180);
 		}
+		
+		logger.warn("randNum: "+ authNum);
+		
+		logger.warn("authState : "+ authState);
 		return authNum;
+
 	}
+	
+	
 	@Override
 	public String authConfirm(String userInputAuthNum) {
 		String sAuthNum = (String) session.getAttribute("authNum");

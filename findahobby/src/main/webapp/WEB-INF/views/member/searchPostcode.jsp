@@ -20,8 +20,8 @@ function setParentAddr(zipcode, address){
 <body>
 	<form action="${urlHome }membership/searchZipcode" method="post">
 		<h1>
-			동면<input type=text name='addr' /> 
-			<input type=submit value="우편번호 검색" />
+			우편번호를 검색하세요.<input type=text name='addr' /> 
+			<input type=submit class="btn btn-outline-success" value="우편번호 검색" />
 		</h1>
 	</form>
 	<c:forEach var="z" items="${zipcodeLst }">

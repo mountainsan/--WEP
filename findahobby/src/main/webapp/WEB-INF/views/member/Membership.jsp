@@ -99,10 +99,6 @@ msg
 		
 	</tr>
 	
-
-	
-	
-	
 	<tr>
 		<td align='right' height=40>아이디</td>
 		<td>
@@ -115,6 +111,8 @@ msg
 		<td>
 			<input type=text name='hpw' placeholder='pw 입력' value="${hregister.hpw }"/> 
 		</td>
+		</tr>
+		<tr>
 		<td align='right'>패스워드 확인</td>
 		<td>
 			<input type=text name='pwOk' placeholder='pw 입력'/> 
@@ -160,7 +158,7 @@ msg
 	<tr>
 		<td align='center' height=40 colspan=4>
 			<input type=submit class="btn btn-outline-success" value='회원가입' style="width: 120px; "/>
-			<input type=submit class="btn btn-outline-success" value='이미 아이디가 있으신가요?' style="width: 180px; "/>
+			<button class="btn btn-outline-success" formaction="${urlHome }login" > 이미 아이디가 있으신가요?</button>
 			<input type=reset class="btn btn-outline-success" value='취소' style="width: 120px; "/>	 
 		</td>
 	</tr>

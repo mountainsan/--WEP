@@ -90,4 +90,5 @@ public class Zipcode {
 	public void setDong2(String dong2) {
 		this.dong2 = dong2;
 	}
+}
 

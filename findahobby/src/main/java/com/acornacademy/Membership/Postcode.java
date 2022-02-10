@@ -60,12 +60,12 @@ public class Postcode {
 		this.hid = hid;
 	}
 
-	// Postcode �� ����
-	public void CopyData(Postcode param) {
-		this.no = param.getNo();
-		this.zipcode = param.getZipcode();
-		this.addr1 = param.getAddr1();
-		this.addr2 = param.getAddr2();
-		this.id = param.getId();
-	}
+//	// Postcode �� ����
+//	public void CopyData(Postcode param) {
+//		this.no = param.getNo();
+//		this.zipcode = param.getZipcode();
+//		this.addr1 = param.getAddr1();
+//		this.addr2 = param.getAddr2();
+//		this.id = param.getId();
+//	}
 }

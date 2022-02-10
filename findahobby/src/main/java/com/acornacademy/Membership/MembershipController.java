@@ -25,7 +25,7 @@ public class MembershipController {
 		//dto to serv & get message
 		String msg = iMemberServ.memberProc(hregister,postcode );
 		model.addAttribute("msg", msg);
-		return "member/membership";
+		return "member/Membership";
 	} // complete
 	
 	@RequestMapping(value = "isExistID")
@@ -34,8 +34,8 @@ public class MembershipController {
 		String msg = iMemberServ.isExistID(hregister );
 		model.addAttribute("msg", msg);
 		
-		return "member/membership";	
-	} // complete
+		return "member/Membership";	
+	} // complete----대문자로 바꾸기!!!
 	
 	// making authnum into session
 	@RequestMapping(value = "sendAuth")
@@ -47,7 +47,7 @@ public class MembershipController {
 	
 		// give random number to jsp
 		model.addAttribute("msg", "인증번호 :"+randNum);
-		return "member/membership";	
+		return "member/Membership";	
 	}// complete
 	
 	// compare each other
@@ -59,7 +59,7 @@ public class MembershipController {
 		
 		// give Confirm to jsp
 		model.addAttribute("msg", msg);
-		return "member/membership";	
+		return "member/Membership";	
 	}
 	
 	//popup start

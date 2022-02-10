@@ -151,14 +151,7 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
-		<!-- jin SHA -->
-		<dependency>
-			<groupId>mail</groupId>
-			<artifactId>jinmail</artifactId>
-			<version>1.0</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/jinsMail.jar</systemPath>
-		</dependency>
+		
 
 	</dependencies>
 	<build>

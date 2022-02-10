@@ -21,10 +21,10 @@ public class LoginController {
 	
 	// derivative address & embodied method
 	@RequestMapping (value = "loginProc")
-	public String loginProc(Model model, Login login) {
+	public String loginProc(Model model, hlogin hlogin) {
 		
 		// loginResult sign is int & is embodied in service
-		int loginResult =iLoginServ.loginProc(login);
+		int loginResult =iLoginServ.loginProc(hlogin);
 		
 		return "login";
 		
