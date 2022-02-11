@@ -45,10 +45,27 @@ public class MemberServiceImpl implements IMemberService {
 	}//memberProc start-----------------------------------------------
 	@Override
 	public String memberProc(hregister hregister, Postcode postcode) {
+		//중복아이디 확인 값 가져오기
+		int exist = iMemberDao.IsExistID(hregister.getHid());
 		
+		//if(exist==0 && )
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// authState 빈 공간 확인----------------------------------------
 		Boolean authState = (Boolean) session.getAttribute("authState");
-		if(!authState)
+		if(authState==null)
 			return "인증번호를 입력하세요";
+		logger.warn("impl_authState :" +authState);
+		//end----------------------------------------
 		
 		// !!!! user inserted value to SHA encrypt for DAO ------
 		hlogin hlogin = hregister;
@@ -56,23 +73,41 @@ public class MemberServiceImpl implements IMemberService {
 
 		hlogin.setHpw(sha.encryptSHA512(hregister.getHpw()));
 		iMemberDao.InsertpwProc(hlogin);
-		//value to DAO ------------------------
+		//end---------------------------------------------
 		
-		//zipcode value to dao
+		//zipcode value to dao------------------------------
 		if(!"".equals(postcode.getZipcode()))
 			iMemberDao.InsertPostcode(postcode);
+		//end------------------------------------
 		
-		// essential point will be must-done
+		logger.warn(hregister.getHactivitytime());
+		logger.warn(hregister.getHdifficulty());
+		logger.warn(hregister.getHemail());
+		logger.warn(hregister.getHid());
+		logger.warn(hregister.getHinterest());
+		logger.warn(hregister.getHlocation());
+		logger.warn(hregister.getHname());
+		logger.warn(hregister.getHphone());
+		logger.warn(hregister.getHpw());
+		logger.warn(hregister.getHtendency());
+		
+		
+
+		// essential point will be must-done------------------
 		if(!"".equals(hregister.getHid())&& !"".equals(hregister.getHpw())&&  
 				!"".equals(hregister.getHname()) &&	!"".equals(hregister.getHphone())&&
 				!"".equals(hregister.getHemail()) ) {
-			
+			//value to DAO ------------------------
+		
 			iMemberDao.InsertMember(hregister);
 			return "회원가입이 완료되었습니다."; }
 		
+		else if(exist != 0) {
+			return "중복된 아이디로 인해 회원가입이 실패했습니다."; 
+		} 
 		else 
 			return "필수정보를 모두 입력해야 합니다.";
-			
+	
 		// all done
 		
 		

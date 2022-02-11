@@ -22,9 +22,23 @@ public class MembershipController {
 	
 	@RequestMapping(value = "memberProc")
 	public String memberProc(Model model, hregister hregister, Postcode postcode) {
+
+			//logger.warn(hregister.getHactivitytime());
+//		logger.warn(hregister.getHdifficulty());
+//		logger.warn(hregister.getHemail());
+//		logger.warn(hregister.getHid());
+//		logger.warn(hregister.getHinterest());
+//		logger.warn(hregister.getHlocation());
+//		logger.warn(hregister.getHname());
+//		logger.warn(hregister.getHphone());
+//		logger.warn(hregister.getHpw());
+//		logger.warn(hregister.getHtendency());
+		
+		
 		//dto to serv & get message
-		String msg = iMemberServ.memberProc(hregister,postcode );
+		String msg = iMemberServ.memberProc(hregister,postcode);
 		model.addAttribute("msg", msg);
+	
 		return "member/Membership";
 	} // complete
 	
@@ -33,7 +47,7 @@ public class MembershipController {
 		//dto to serv & get message
 		String msg = iMemberServ.isExistID(hregister );
 		model.addAttribute("msg", msg);
-		
+		logger.warn(msg);
 		return "member/Membership";	
 	} // complete----대문자로 바꾸기!!!
 	
@@ -71,7 +85,7 @@ public class MembershipController {
 	@RequestMapping(value = "searchZipcode")
 	public String searchZipcode(Model model,
 			@RequestParam("addr") String addr) {
-//		logger.warn(addr);
+		logger.warn(addr);
 		List<Zipcode> zipcodeLst = iMemberServ.searchZipcode(addr);
 		model.addAttribute("zipcodeLst", zipcodeLst);
 		return "member/searchPostcode";

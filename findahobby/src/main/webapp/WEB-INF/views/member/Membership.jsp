@@ -157,7 +157,7 @@ msg
 	
 	<tr>
 		<td align='center' height=40 colspan=4>
-			<input type=submit class="btn btn-outline-success" value='회원가입' style="width: 120px; "/>
+			<input type=submit class="btn btn-outline-success" value='회원가입' style="width: 120px; " disabled="disabled"/>
 			<button class="btn btn-outline-success" formaction="${urlHome }login" > 이미 아이디가 있으신가요?</button>
 			<input type=reset class="btn btn-outline-success" value='취소' style="width: 120px; "/>	 
 		</td>

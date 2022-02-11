@@ -3,7 +3,7 @@
 <mapper namespace="com.acornacademy.Membership.IMemberDAO">
 
 <insert id="InsertpwProc" parameterType="com.acornacademy.Login.hlogin">
-insert into login(Hid, Hpw)
+insert into hlogin(Hid, Hpw)
 values (#{hid}, #{hpw})
 </insert>
 
